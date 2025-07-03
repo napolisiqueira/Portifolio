@@ -1,0 +1,463 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Globais */
+html {
+    scroll-behavior: smooth; /* Habilita rolagem suave para âncoras */
+}
+
+body {
+    background-color: #02001f;
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    line-height: 1.6;
+    height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    overflow: hidden; /* Evita a rolagem padrão do body/html */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Esconde a scrollbar (para Firefox) */
+.hide-scrollbar {
+    scrollbar-width: none;
+}
+
+/* Contêiner de Rolagem Principal */
+.scroll-container {
+    height: 100vh; /* Ocupa a altura total da viewport */
+    width: 100vw; /* Ocupa a largura total da viewport */
+    overflow-y: scroll; /* Permite a rolagem vertical */
+    scroll-padding-top: 80px; /* Padding para o conteúdo não ficar escondido pela navbar */
+}
+
+/* Estilos para a scrollbar (Webkit browsers) */
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+    background-color: #f5f5f5;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #888;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+/* Seções de Conteúdo (Pontos de Encaixe) */
+.content-section {
+    min-height: 100vh; /* Cada seção ocupa no mínimo a altura total da viewport */
+    width: 100%; /* Cada seção ocupa a largura total do contêiner */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 2rem 0; /* Padding superior para navbar e lateral */
+    scroll-snap-align: start; /* O ponto de encaixe será o início de cada seção */
+    flex-shrink: 0; /* Impede que as seções encolham */
+    color: white;
+    font-size: 2em; /* Tamanho base para o conteúdo da seção */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Navbar Fixa no Topo */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #02001f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #6b6b6b;
+    transition: color 0.3s ease;
+}
+
+.navbar-logo a:hover {
+    color: aliceblue;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #6b6b6b;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: aliceblue;
+}
+
+/* --- Seção de Apresentação (Home) --- */
+.home-section .intro-container {
+    display: flex; /* Mantém o layout flexbox para a seção Home */
+    flex-wrap: wrap;
+    background-color: #010016;
+    border-radius: 10px;
+    padding: 5rem;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 90%;
+    min-height: 50%;
+}
+
+.home-section .intro-title { /* Aplicado ao h1 dentro de .home-section */
+    font-size: 48px;
+    padding-top: 70px;
+    padding-bottom: 35px;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Seção Sobre Mim (About Me) --- */
+.about-content-wrapper { /* Novo wrapper para a seção About Me */
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #010016; /* Pode ser diferente do home-section se quiser */
+    border-radius: 10px;
+    padding: 5rem;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 90%;
+    min-height: 50%;
+}
+
+/* As classes abaixo são compartilhadas e agora funcionarão para ambas as seções */
+.intro-text-content { /* Removi o prefixo .home-section */
+    flex: 1;
+    min-width: 300px;
+    max-width: 90%;
+    text-align: left;
+    font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+.intro-text-content p {
+    font-size: 0.5em;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+.intro-image-container { /* Removi o prefixo .home-section */
+    flex: 1;
+    min-width: 280px;
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+    padding: 0px;
+}
+
+/* Div de Bloco para espaçamento/separação */
+.spacer-block {
+    width: 100%;
+    height: 70px;
+    background-color: #0a0a23;
+}
+
+/* Seção de Projetos */
+.projects-section {
+    padding: 2rem;
+    background-color: #02001f;
+    flex-direction: column;
+}
+
+.projects-section h1 {
+    margin-bottom: 3rem;
+}
+
+/* Grid de Projetos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}
+
+/* Card Individual do Projeto */
+.project-card {
+    background-color: #010016;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-name-ribbon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #02001f;
+    padding: 0.5rem 1rem;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.project-info {
+    padding: 1rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-info h3 {
+    font-size: 0.5em;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+
+.project-techs {
+    font-size: 0.5em;
+    color: #bbb;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.project-summary {
+    font-size: 0.4em;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* Estilos de Seção Genéricos */
+.generic-section-content {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 48px;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #0a0a23;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-icons {
+    margin-top: 1rem;
+}
+
+.footer-icons a {
+    margin: 0 1rem;
+    font-size: 24px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-icons a:hover {
+    color: gray;
+}
+
+/* Responsividade Geral */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem;
+        height: 60px;
+    }
+    .navbar-links {
+        gap: 1rem;
+    }
+    .scroll-container {
+        scroll-padding-top: 60px;
+    }
+    .content-section {
+        padding-top: 60px;
+    }
+}
+
+/* Responsividade Específica - Seções de Conteúdo com .intro-text-content e .intro-image-container */
+@media (max-width: 992px) {
+    .home-section .intro-container,
+    .about-content-wrapper { /* Aplicar a ambos os wrappers */
+        padding: 3rem;
+        gap: 1.5rem;
+        width: 95%;
+    }
+    .intro-title { /* Aplicar diretamente ao intro-title, se for comum */
+        font-size: 1em;
+    }
+    .intro-text-content p {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-section .intro-container,
+    .about-content-wrapper { /* Aplicar a ambos os wrappers */
+        flex-direction: column;
+        padding: 2rem;
+        margin: 1rem auto;
+    }
+    .intro-text-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    .intro-title {
+        font-size: 1em;
+    }
+    .intro-text-content p {
+        font-size: 0.5em;
+        text-align: left;
+    }
+    .intro-image-container {
+        max-width: 80%;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-section .intro-container,
+    .about-content-wrapper { /* Aplicar a ambos os wrappers */
+        padding: 1.5rem;
+    }
+    .intro-title {
+        font-size: 1em;
+    }
+    .intro-text-content p {
+        font-size: 0.2em;
+    }
+}
+
+/* Responsividade Específica - Grid de Projetos */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    .project-name-ribbon {
+        font-size: 1em;
+    }
+    .project-info h3 {
+        font-size: 1em;
+    }
+    .project-techs, .project-summary {
+        font-size: 0.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        width: 85%;
+    }
+    .project-card {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+    .project-image-wrapper {
+        height: 180px;
+    }
+    .project-name-ribbon {
+        font-size: 1em;
+        padding: 0.4rem 0.8rem;
+    }
+    .project-info {
+        padding: 1rem;
+    }
+    .project-info h3 {
+        font-size: 1em;
+    }
+    .project-techs, .project-summary {
+        font-size: 0.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-section h1 {
+        font-size: 1em;
+        margin-bottom: 2rem;
+    }
+    .projects-grid {
+        gap: 1rem;
+    }
+    .project-card {
+        max-width: 300px;
+    }
+    .project-image-wrapper {
+        height: 150px;
+    }
+}

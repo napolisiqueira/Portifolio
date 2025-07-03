@@ -1,0 +1,41 @@
+{% load static %}
+{% include "global/partials/head.html" %}
+<body>
+
+    {% include "global/partials/header.html" %}
+
+    <main class="scroll-container hide-scrollbar">
+        
+        <section class="content-section home-section" id="home">
+            <h1 class="intro-title">AQUI SUAS IDEIAS SÃO ESCRITAS E LANÇADAS</h1>
+                <div class="intro-image-container">
+                    <img src="{% static 'images/gisplyapi.png' %}" alt="Prévia GistlyAPI">
+                </div>
+            <div class="spacer-block"></div>
+        </section>
+
+        <section class="content-section" id="about">
+            {% include "global/partials/about_me.html" %}
+        </section>
+
+        <section class="content-section projects-section" id="projetos">
+            {% include "global/partials/myprojects.html" %}
+        </section>
+
+        <section class="content-section" id="experiencia">
+            <h1 class="generic-section-content">Experiência Profissional</h1>
+            <p>Seu parágrafo sobre McDonald's, Exército e Mensa Distribuidora vai aqui.</p>
+        </section>
+
+        <section class="content-section" id="damasco">
+            <h1 class="generic-section-content">Entre em Contato</h1>
+        </section>
+
+        <section class="content-section" id="contato">
+            {% include "global/partials/footer.html" %} 
+        </section>
+
+    </main>
+
+</body>
+</html>
