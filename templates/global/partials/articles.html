@@ -1,14 +1,14 @@
-{% load static %} {# Mantenha esta linha se estiver usando static files #}
+{% load static %}
 {% load markdownify %}
 <div class="articles-grid-container">
     {% for article in articles %}
         <a href="#" class="article-card">
-            {# Removed the extra divs, structuring directly inside the <a> #}
-            <div class="article-text-group"> {# This div groups Title and Summary together #}
+
+            <div class="article-text-group">
                 <h3 class="article-title">{{ article.title }}</h3>
-                <p class="article-summary">{{ article.text|markdownify|striptags|truncatechars:150 }}</p> {# Added markdownify for text processing #}
+                <p class="article-summary">{{ article.text|markdownify|striptags|truncatechars:150 }}</p> 
             </div>
-            <p class="article-date">{{ article.created_it|date:"d/m/Y" }}</p> {# Added date formatting #}
+            <p class="article-date">{{ article.created_it|date:"d/m/Y" }}</p>
         </a>
     {% endfor %}
 </div>

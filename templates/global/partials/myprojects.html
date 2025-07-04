@@ -2,7 +2,7 @@
 <h1 class="generic-section-content">MEUS PROJETOS</h1> {# Mantém o estilo do seu h1 #}
 
 <div class="projects-grid">
-    <a href="URL_DA_DOCUMENTACAO_GISTLYAPI" target="_blank" class="project-card">
+    <a href="{% url "all:project_doc" owner="napolisiqueira" repo_name="GistlyAPI" %}" class="project-card">
         <div class="project-image-wrapper">
             <img src="{% static 'images/gisplyapi.png' %}" alt="Prévia GistlyAPI">
             <div class="project-name-ribbon">GistlyAPI</div>

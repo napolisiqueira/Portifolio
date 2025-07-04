@@ -8,34 +8,36 @@
         
         <section class="content-section home-section" id="home">
             <h1 class="intro-title">AQUI SUAS IDEIAS SÃO ESCRITAS E LANÇADAS</h1>
-                <div class="intro-image-container">
-                    <img src="{% static 'images/gisplyapi.png' %}" alt="Prévia GistlyAPI">
-                </div>
-            <div class="spacer-block"></div>
+            <div class="intro-image-container">
+                <img src="{% static 'images/gisplyapi.png' %}" alt="Prévia GistlyAPI">
+            </div>
+            <div class="spacer-block">
+                {% include "global/partials/svgsicons.html" %}
+            </div>
         </section>
 
+        {# O RESTO DO SEU INDEX.HTML CONTINUA NORMALMENTE #}
         <section class="content-section" id="about">
             {% include "global/partials/about_me.html" %}
         </section>
-
+        
         <section class="content-section projects-section" id="projetos">
             {% include "global/partials/myprojects.html" %}
         </section>
-        <hr>
+
+        <section class="content-section" id="contatos">
+          CONTATOS
+            {% comment %} {% include "global/partials/contact.html" %} {% endcomment %}
+        </section>
+
         <section class="content-section" id="artigos">
-            <h1 class="generic-section-content">ARTIGOS</h1>
+            <h1 class="intro-title">ARTIGOS</h1>
             {% include "global/partials/articles.html" %}
         </section>
 
-        <section class="content-section" id="damasco">
-            <h1 class="generic-section-content">Entre em Contato</h1>
+        <section class="content-section" id="contact">
+            {% include "global/partials/footer.html" %}
         </section>
-
-        <section class="content-section" id="contato">
-            {% include "global/partials/footer.html" %} 
-        </section>
-
     </main>
-
 </body>
 </html>
