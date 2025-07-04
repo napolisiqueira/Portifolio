@@ -12,7 +12,8 @@ html {
 
 body {
     background-color: #02001f;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif; 
+    text-transform: uppercase;  
     color: #ffffff;
     line-height: 1.6;
     height: 100vh; /* Garante que o body ocupe a altura total da viewport */
@@ -119,20 +120,8 @@ img {
 }
 
 /* --- Seção de Apresentação (Home) --- */
-.home-section .intro-container {
-    display: flex; /* Mantém o layout flexbox para a seção Home */
-    flex-wrap: wrap;
-    background-color: #010016;
-    border-radius: 10px;
-    padding: 5rem;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem auto;
-    width: 90%;
-    max-width: 90%;
-    min-height: 50%;
-}
+/* Removido .home-section .intro-container para evitar conflito com .home-skills-container, 
+   o layout da home-section será mais flexível pelo .content-section */
 
 .home-section .intro-title { /* Aplicado ao h1 dentro de .home-section */
     font-size: 48px;
@@ -170,7 +159,7 @@ img {
 
 .intro-text-content p {
     font-size: 0.5em;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
     text-align: justify;
 }
 
@@ -351,8 +340,8 @@ img {
 
 /* Responsividade Específica - Seções de Conteúdo com .intro-text-content e .intro-image-container */
 @media (max-width: 992px) {
-    .home-section .intro-container,
-    .about-content-wrapper { /* Aplicar a ambos os wrappers */
+    /* Removido .home-section .intro-container daqui, pois o .home-skills-container lida com sua própria responsividade */
+    .about-content-wrapper { /* Aplicar apenas a about-content-wrapper agora */
         padding: 3rem;
         gap: 1.5rem;
         width: 95%;
@@ -366,8 +355,8 @@ img {
 }
 
 @media (max-width: 768px) {
-    .home-section .intro-container,
-    .about-content-wrapper { /* Aplicar a ambos os wrappers */
+    /* Removido .home-section .intro-container daqui */
+    .about-content-wrapper { /* Aplicar apenas a about-content-wrapper agora */
         flex-direction: column;
         padding: 2rem;
         margin: 1rem auto;
@@ -390,8 +379,8 @@ img {
 }
 
 @media (max-width: 480px) {
-    .home-section .intro-container,
-    .about-content-wrapper { /* Aplicar a ambos os wrappers */
+    /* Removido .home-section .intro-container daqui */
+    .about-content-wrapper { /* Aplicar apenas a about-content-wrapper agora */
         padding: 1.5rem;
     }
     .intro-title {
@@ -562,7 +551,7 @@ img {
     border-color: aliceblue;
 }
 
-/* --- Responsividade para a Seção de Artigos (AJUSTADA NOVAMENTE) --- */
+/* --- Responsividade para a Seção de Artigos --- */
 @media (max-width: 992px) {
     .articles-grid-container {
         width: 95%;
@@ -634,4 +623,209 @@ img {
         font-size: 1em;
         padding: 0.8rem 1.5rem;
     }
+}
+
+/* --- Seção de Habilidades (Skills) - VERSÃO FINAL CONSOLIDADA E CORRIGIDA --- */
+
+/* Contêiner para os itens de habilidade (nome + ícone) em linha */
+.icons-grid-container {
+    display: flex; /* LAYOUT EM LINHA: Ícones lado a lado */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 20px; /* Espaçamento entre os itens (nome + ícone) */
+    padding: 10px; /* Espaçamento interno */
+    width: 100%; /* Ocupa a largura total do seu pai (.home-skills-container) */
+}
+
+/* Item individual de habilidade (contém nome e ícone) */
+.skill-item {
+    display: flex;
+    flex-direction: column; /* Organiza: Nome acima do ícone */
+    align-items: center; /* Centraliza o nome e o ícone dentro do seu próprio item */
+    text-align: center;
+    min-width: 10px; /* Largura mínima para cada item (ajustável) */
+    filter: invert(1); 
+}
+
+/* Estilo para o nome da habilidade */
+.skill-name {
+    filter: invert(1);
+    font-size: 0.3em; /* Tamanho do texto */
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 5px; /* Espaço entre o nome e o ícone */
+    white-space: nowrap; /* Impede que o nome da habilidade quebre linha */
+    overflow: hidden; /* Esconde o excesso de texto */
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+    max-width: 100px; /* Largura máxima para o nome, evita nomes muito longos */
+    font-family: 'Arial', sans-serif; /* Fonte mais legível */
+    font-weight: bold;
+}
+
+/* Estilo para cada imagem SVG/PNG de habilidade */
+.skill-item img {
+    width: 30px; /* TAMANHO DOS ÍCONES (ajuste aqui) */
+    height: 30px; /* Mantém a proporção */
+    object-fit: contain;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 0;
+    box-shadow: none;
+    display: block; /* Garante que a imagem se comporte como um bloco */
+    margin: 0;
+    padding: 0;
+}
+
+/* Efeito de hover */
+.skill-item:hover .skill-name {
+    color: aliceblue; /* Mudar cor do texto no hover */
+}
+.skill-item img:hover {
+    transform: scale(1.1); /* Ícone cresce um pouco no hover */
+}
+
+/* --- Responsividade para a Seção de Habilidades --- */
+@media (max-width: 992px) {
+    .home-skills-container {
+        padding: 0.8rem;
+    }
+    .icons-grid-container {
+        gap: 15px;
+    }
+    .skill-item img {
+        width: 45px; /* Ajuste para telas menores */
+        height: 45px;
+    }
+    .skill-name {
+        font-size: 0.75em;
+        max-width: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-skills-container {
+        margin: 1rem auto 0;
+        padding: 0.5rem;
+    }
+    .icons-grid-container {
+        gap: 10px;
+    }
+    .skill-item img {
+        width: 35px; /* Ajuste para tablets e celulares */
+        height: 35px;
+    }
+    .skill-name {
+        font-size: 0.7em;
+        max-width: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .icons-grid-container {
+        gap: 8px;
+    }
+    .skill-item img {
+        width: 28px; /* Ajuste para celulares pequenos */
+        height: 28px;
+    }
+    .skill-name {
+        font-size: 0.65em;
+        max-width: 55px;
+    }
+}
+
+
+.documentation-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #010016; /* Cor de fundo similar ao seu site */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.documentation-title {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.readme-content {
+    font-family: 'Arial', sans-serif; /* Uma fonte legível para o corpo da documentação */
+    color: #e0e0e0;
+    line-height: 1.8;
+    font-size: 0.4em;
+}
+
+/* Estilos para elementos Markdown dentro do README */
+.readme-content h1,
+.readme-content h2,
+.readme-content h3 {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.readme-content h1 { font-size: 2em; }
+.readme-content h2 { font-size: 1.8em; }
+.readme-content h3 { font-size: 1.5em; }
+.readme-content p {
+    margin-bottom: 1em;
+}
+.readme-content ul,
+.readme-content ol {
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+.readme-content code {
+    background-color: #0a0a23;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: 'monospace';
+    color: #00ffc0; /* Cor para código inline */
+}
+.readme-content pre {
+    background-color: #0a0a23;
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 1em;
+    color: #00ffc0; /* Cor para blocos de código */
+}
+.readme-content a {
+    color: #4CAF50; /* Cor para links dentro do README */
+    text-decoration: underline;
+}
+.readme-content a:hover {
+    color: #66BB6A;
+}
+.readme-content img {
+    max-width: 100%; /* Garante que imagens do README sejam responsivas */
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 5px;
+}
+
+.error-message {
+    color: #FF5252;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+
+.back-page {
+    font-family: 'Awesome', sans-serif;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    text-align: left;
+    padding-left: 1.8rem;
+    padding-top: 1.3rem;
 }
