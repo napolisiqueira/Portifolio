@@ -105,6 +105,27 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+MARKDOWNIFY = {
+    "default": {
+        "EXTENSIONS": [
+            "markdown.extensions.fenced_code", # ESTA É A LINHA IMPORTANTE
+            "markdown.extensions.extra",        # Opcional: inclui outras extensões úteis
+            # Outras extensões que você possa querer
+        ],
+        "EXTENSION_CONFIGS": {
+            "markdown.extensions.fenced_code": {
+                "lang_prefix": "language-",
+            },
+        },
+        "WHITELIST_TAGS": [
+            "a", "abbr", "acronym", "b", "blockquote", "code", "em", "i", "li", "ol", "p", "strong", "ul", "h1", "h2", "h3", "h4", "h5", "h6", "pre", # Adicione 'pre' e 'code' se já não estiverem
+        ],
+        "WHITELIST_ATTRS": [
+            "href", "src", "alt", "class", # 'class' é crucial para o destaque de sintaxe
+        ],
+        "ALLOWED_PROTOCOLS": ["http", "https"],
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/

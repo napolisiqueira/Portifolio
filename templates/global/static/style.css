@@ -68,7 +68,7 @@ img {
     scroll-snap-align: start; /* O ponto de encaixe será o início de cada seção */
     flex-shrink: 0; /* Impede que as seções encolham */
     color: white;
-    font-size: 2em; /* Tamanho base para o conteúdo da seção */
+    font-size: 1.5em; /* Tamanho base para o conteúdo da seção */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -154,7 +154,7 @@ img {
     min-width: 300px;
     max-width: 90%;
     text-align: left;
-    font-family: 'Arial Narrow Bold', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .intro-text-content p {
@@ -189,7 +189,7 @@ img {
 
 /* Seção de Projetos */
 .projects-section {
-    padding: 2rem;
+    padding: 1rem;
     background-color: #02001f;
     flex-direction: column;
 }
@@ -287,7 +287,7 @@ img {
 
 /* Estilos de Seção Genéricos */
 .generic-section-content {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     color: #ffffff;
     font-size: 48px;
     padding: 2rem;
@@ -466,7 +466,7 @@ img {
 
 /* Card Individual do Artigo (agora é o contêiner flex) */
 .article-card {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #a9a8be00; /* Cor de fundo que parece na imagem */
     border-radius: 10px;
     padding: 1.5rem 2rem; /* Aumentei o padding horizontal para parecer com a imagem */
@@ -659,7 +659,7 @@ img {
     overflow: hidden; /* Esconde o excesso de texto */
     text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
     max-width: 100px; /* Largura máxima para o nome, evita nomes muito longos */
-    font-family: 'Arial', sans-serif; /* Fonte mais legível */
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
 
@@ -734,12 +734,10 @@ img {
     }
 }
 
-
 .documentation-container {
-    width: 90%;
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
+    width: 70%;
+    margin: 1rem;
+    padding: 1rem;
     background-color: #010016; /* Cor de fundo similar ao seu site */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -748,9 +746,9 @@ img {
 .documentation-title {
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
-    font-size: 2.5em;
+    font-size: 1em;
     color: #ffffff;
-    margin-bottom: 1.5rem;
+    margin-bottom: 5rem;
     text-align: center;
 }
 
@@ -790,9 +788,10 @@ img {
     color: #00ffc0; /* Cor para código inline */
 }
 .readme-content pre {
+    margin: 0 auto;
+    max-width: 80%;
     background-color: #0a0a23;
     padding: 1em;
-    border-radius: 8px;
     overflow-x: auto;
     margin-bottom: 1em;
     color: #00ffc0; /* Cor para blocos de código */
@@ -814,7 +813,7 @@ img {
 
 .error-message {
     color: #FF5252;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     margin-top: 2rem;
 }

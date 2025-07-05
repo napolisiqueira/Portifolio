@@ -15,8 +15,7 @@ def project_documentation_view(request, owner, repo_name):
         response = requests.get(github_api_url, headers=headers)
         response.raise_for_status() 
 
-        readme_content_markdown = response.text
-        readme_content_html = markdown.markdown(readme_content_markdown) 
+        readme_content_html = response.text
 
         context = {
             'readme_html': readme_content_html,
