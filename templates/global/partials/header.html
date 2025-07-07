@@ -1,15 +1,15 @@
 <nav class="navbar">
     <div class="navbar-logo">
-        <a href="#home">FELIPE NAPOLI</a>
+        <a href="{% url 'all:home' %}">FELIPE NAPOLI</a>
     </div>
     <ul class="navbar-links">
-        <li><a href="#home">Home</a></li>
+        <li><a href="{% url 'all:home' %}">Home</a></li>
         <li><a href="#sobre">Sobre</a></li> 
-        <li><a href="#projetos">Projetos</a></li> 
-        <li><a href="#artigos">Artigos</a></li>
+        <li><a href="{% url 'all:home' %}#projetos">Projetos</a></li> 
+        <li><a href="{% url 'all:articles_blog' %}">Artigos</a></li>
         <li><a href="#contato">Contato</a></li> 
-        <li><a href="#"> |  </a></li> 
-        <li><a href="https://github.com/napolisiqueira" target="_blank">Github</a></li> 
+        <li><a href="#">  |  </a></li> 
+        <li><a href="https://github.com/napolisiqueira" target="_blank">Github</a></li>
 
     </ul>
 </nav>
