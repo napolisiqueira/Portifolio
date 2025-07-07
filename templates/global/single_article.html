@@ -1,0 +1,24 @@
+{% load static %}
+{% include "global/partials/head.html" %}
+<body>
+    {% include "global/partials/header.html" %}
+    <main class="scroll-container hide-scrollbar">
+        <section class="content-section" id="artigos">
+            {% for article in articles %}
+                <a href="{% url 'all:articles_focus' article.id %}" class="article-card">
+                    <div class="article-text-group">
+                        <h3 class="article-title">{{ article.title }}</h3>
+                        <p class="article-summary">{{ article.text }}</p>
+                    </div>
+                    <div class="info-bottom">
+                        <p class="article-date">{{ article.created_it|date:"d/m/Y" }}</p>
+                        <p class="article-category">{{ article.category_name }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </section>
+        <section class="content-section" id="contato">
+            {% include "global/partials/footer.html" %}
+        </section>
+    </main>
+</body>

@@ -486,11 +486,25 @@ img {
     background-color: #02002b; /* Cor de fundo que parece na imagem */
 }
 
+/* Container principal do Card (precisa ser flexbox para o posicionamento) */
+.article-card {
+    display: flex; /* Torna o card um container flex */
+    flex-direction: column; /* Coloca os itens em coluna */
+    justify-content: space-between; /* Empurra o texto para cima e a categoria/data para baixo/cima */
+    /* Garanta que o article-card tenha uma altura definida ou que seu conteúdo o empurre */
+    height: 100%; /* Exemplo: se estiver dentro de um grid ou item flexível */
+    /* Outros estilos do seu card, como padding, border, etc. */
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #030028; /* Exemplo de cor de fundo inicial */
+    position: relative; /* Para posicionamento absoluto se necessário no futuro */
+}
+
+
 /* Agrupamento de Título e Resumo */
 .article-card .article-text-group {
-    flex: 1; /* Permite que o grupo de texto ocupe o máximo de espaço */
-    margin-right: 1.5rem; /* Espaçamento entre o texto e a data */
-    min-width: 200px; /* Garante que o texto não fique muito espremido */
+    flex: 1; /* Permite que o grupo de texto ocupe o máximo de espaço VERTICAL */
+    margin-bottom: 1rem; /* Espaçamento entre o texto e os itens inferiores (se houver) */
 }
 
 /* Título do Artigo */
@@ -511,6 +525,21 @@ img {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Limita o resumo a 3 linhas, ajuste conforme necessário */
+}
+
+/* Container para a Data e a Categoria (novo agrupamento) */
+.article-card .info-bottom {
+    display: flex; /* Torna este um container flex */
+    justify-content: space-between; /* Empurra a data para um lado e a categoria para o outro */
+    align-items: flex-end; /* Alinha os itens na parte inferior deste container */
+    width: 100%; /* Garante que ocupe toda a largura disponível */
+}
+.documentation-container .info-bottom {
+    display: flex; /* Torna este um container flex */
+    justify-content: space-between; /* Empurra a data para um lado e a categoria para o outro */
+    align-items: flex-end; /* Alinha os itens na parte inferior deste container */
+    width: 100%; /* Garante que ocupe toda a largura disponível */
 }
 
 /* Data do Artigo */
@@ -518,10 +547,46 @@ img {
     font-size: 0.9em;
     color: #ffffff; /* Cor discreta para a data */
     white-space: nowrap; /* Impede que a data quebre linha */
-    align-self: flex-start; /* Alinha a data ao topo dentro do flex container */
-    margin-top: 0.2em; /* Pequeno ajuste para alinhar com o topo do título */
+    /* align-self: flex-start; REMOVIDO: Agora é controlado pelo .info-bottom */
+    /* margin-top: 0.2em; REMOVIDO: Ajuste pode ser feito no flex container ou padding */
+    order: 2; /* Garante que fique à direita no .info-bottom */
 }
 
+/* Categoria do Artigo */
+.article-card .article-category {
+    font-size: 0.9em;
+    background-color: rgba(0, 255, 192, 0.4); /* COR TRANSPARENTE: #00ffc0 com 40% de opacidade */
+    border-radius: 10px;
+    padding: 0.3em 0.8em; /* Adicione um pouco de padding para parecer um "botão" */
+    color: #ffffff;
+    white-space: nowrap;
+    /* align-self: flex-end; REMOVIDO: Agora é controlado pelo .info-bottom */
+    /* margin-bottom: 0.2em; REMOVIDO: Ajuste pode ser feito no flex container ou padding */
+    order: 1; /* Garante que fique à esquerda no .info-bottom */
+}
+
+/* Data do Artigo */
+.documentation-container .article-date {
+    font-size: 0.7em;
+    color: #ffffff; /* Cor discreta para a data */
+    white-space: nowrap; /* Impede que a data quebre linha */
+    /* align-self: flex-start; REMOVIDO: Agora é controlado pelo .info-bottom */
+    /* margin-top: 0.2em; REMOVIDO: Ajuste pode ser feito no flex container ou padding */
+    order: 2; /* Garante que fique à direita no .info-bottom */
+}
+
+/* Categoria do Artigo */
+.documentation-container .article-category {
+    font-size: 0.4em;
+    background-color: rgba(0, 255, 192, 0.4); /* COR TRANSPARENTE: #00ffc0 com 40% de opacidade */
+    border-radius: 10px;
+    padding: 0.3em 0.8em; /* Adicione um pouco de padding para parecer um "botão" */
+    color: rgb(0, 255, 192);
+    white-space: nowrap;
+    /* align-self: flex-end; REMOVIDO: Agora é controlado pelo .info-bottom */
+    /* margin-bottom: 0.2em; REMOVIDO: Ajuste pode ser feito no flex container ou padding */
+    order: 1; /* Garante que fique à esquerda no .info-bottom */
+}
 /* Botão/Link "Ver Mais" - (Sem alterações significativas aqui) */
 .more-articles-box {
     background-color: transparent;

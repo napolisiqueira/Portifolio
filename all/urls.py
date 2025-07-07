@@ -5,4 +5,6 @@ app_name = "all"
 urlpatterns = [
     path('', views.home, name="home"),
     path('projects/<str:owner>/<str:repo_name>/doc/', views.project_documentation_view, name='project_doc'),
+    path('articles/<int:article_id>/focus/', views.articles_focus, name="articles_focus"),
+    path('articles/', views.articles_blog, name='articles_blog'),
 ]
