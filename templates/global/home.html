@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Meu Portfólio{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <h1 class="word-of-day">FRASE INSPIRADORA</h1>
+    <img class='hero-image' src="{% static 'images/gisplyapi.png' %}" alt="The real code in universe is the one that works">
+
+    <div class="slider">
+      <ul class="slider-marquee">
+        <li><i class="devicon-python-plain"></i></li>
+        <li><i class="devicon-django-plain"></i></li>
+        <li><i class="devicon-flask-original"></i></li>
+        <li><i class="devicon-fastapi-plain"></i></li>
+        <li><i class="devicon-go-plain"></i></li>
+        <li><i class="devicon-javascript-plain"></i></li>
+        <li><i class="devicon-html5-plain"></i></li>
+        <li><i class="devicon-css3-plain"></i></li>
+        <li><i class="devicon-mysql-plain"></i></li>
+        <li><i class="devicon-postgresql-plain"></i></li>
+        <li><i class="devicon-mongodb-plain"></i></li>
+        <li><i class="devicon-docker-plain"></i></li>
+        <li><i class="devicon-linux-plain"></i></li>
+        <li><i class="devicon-bash-plain"></i></li>
+        <li><i class="devicon-git-plain"></i></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sections">
+    <div class="about-content">
+        <h2>Sobre Mim</h2>
+        <p>
+          Sou um desenvolvedor apaixonado por criar soluções inovadoras e eficientes. Com experiência em diversas tecnologias,
+          estou sempre em busca de novos desafios e oportunidades para aprender e crescer.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="{% static 'images/myself.png' %}" alt="Imagem de perfil">
+      </div>
+  </section>
+
+  <section class="sections">
+    <h2>Métricas</h2>
+    <div class="metric">
+      <h3>Projetos</h3>
+      <p>4 em desenvolvimento</p>
+      <p>5 concluídos</p>
+    </div>
+    <div class="metric">
+      <h3>Contribuições</h3>
+      <p>340 commits+</p>
+      <p>1 open source contribution</p>
+    </div>
+    <div class="metric">
+      <h3>Artigos</h3>
+      <p>4 publicados (em nutrição)</p>
+    </div>
+  </section>
+
+
+  <section class="sections">
+      <h2>Projetos Recentes</h2>
+      <div class="projects">
+        <a class="project-card" href="/">
+          <div class="project-image">
+            <img src="{% static 'images/projeto1.jpg' %}" alt="Projeto 1 preview">
+          </div>
+          <div class="project-info">
+            <h3>Projeto 1</h3>
+            <p>Descrição do projeto 1.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">API</span>
+            </div>
+          </div>
+        </a>
+        <a class="project-card" href="/">
+          <div class="project-image">
+            <img src="{% static 'images/projeto2.jpg' %}" alt="Projeto 2 preview">
+          </div>
+          <div class="project-info">
+            <h3>Projeto 2</h3>
+            <p>Descrição do projeto 2.</p>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Frontend</span>
+            </div>
+          </div>
+        </a>
+        <a class="project-card" href="/">
+          <div class="project-image">
+            <img src="{% static 'images/projeto3.jpg' %}" alt="Projeto 3 preview">
+          </div>
+          <div class="project-info">
+            <h3>Projeto 3</h3>
+            <p>Descrição do projeto 3.</p>
+            <div class="project-tags">
+              <span class="tag">Go</span>
+              <span class="tag">Backend</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  <section class="articles-section sections">
+      <h2>Artigos</h2>
+      <div class="posts">
+      {% for article in articles %}
+          <a class="post-card" href="{% url "portfolio:articles_detail" article.pk %}">
+            <div class="post-header">
+              <h3>{{ article.title }}</h3>
+              <span class="post-date">{{ article.created_at|date:"d/m/Y" }}</span>
+            </div>
+            <p class="post-desc">{{ article.content|striptags|truncatechars:150 }}</p>
+            <div class="post-tags">
+              {% for tag in article.categories.all %}
+                <span class="tag">{{ tag.name }}</span>
+              {% endfor %}
+            </div>
+            <div class="post-footer">
+              <span class="post-author">por {{ article.author }}</span>
+            </div>
+          </a>
+      {% endfor %}
+      </div>
+      <div class="see-more-wrapper">
+        <a href="{% url 'portfolio:articles' %}" class="see-more-btn">Ver mais artigos</a>
+      </div>
+    </section>
+{% endblock %}
+
+
+
+{% block scripts %}
+  <script src="{% static 'js/slider_marquee.js' %}"></script>
+{% endblock %}
