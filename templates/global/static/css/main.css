@@ -830,3 +830,59 @@ footer p {
   }
 }
 
+/*/ EXPERIENCIAS /*/
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  max-width: 80%;
+  margin: 2rem auto;
+}
+
+.experience h2 {
+  display: flex;
+  width: 60%;
+}
+
+.experience-content {
+  max-width: 90%;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 999px) {
+  .experience {
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 70%;
+  }
+
+  .experience-content {
+    max-width: 100%;
+  }
+}
+
+.download-curriculo button {
+  background-color: rgba(0,0,0,0.08);
+  border-radius: 10px;
+  border-color: white;
+  color: white;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  transition: ease-in-out 0.3s;
+  margin: 2rem auto;
+}
+
+.button-dl {
+  width: 100%;
+  height: 100px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.download-curriculo button:hover {
+  width: 160px;
+  height: 60px;
+  transition: ease-in-out 0.3s;
+  opacity: 0.3;
+}
