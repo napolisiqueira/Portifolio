@@ -1,10 +1,11 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 # Create your models here.
 class Article(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    content = RichTextUploadingField()
     author = models.ForeignKey(
         "auth.User", on_delete=models.SET_NULL, blank=True, null=True
     )

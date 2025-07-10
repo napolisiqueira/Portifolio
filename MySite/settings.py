@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
+    'ckeditor_uploader',
     'portfolio',
 ]
 
@@ -123,6 +125,21 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Directory for collected static files
 
+
+# Configurações do CKEditor
+CKEDITOR_UPLOAD_PATH = 'uploads/' # Subpasta dentro de MEDIA_ROOT para uploads do CKEditor
+
+# Opcional: Configurações de toolbar do CKEditor (exemplo)
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+        'extraPlugins': 'codesnippet', # Exemplo: para adicionar plugin de código
+        'filebrowserBrowseUrl': '/ckeditor/browse/', # Necessário para o gerenciador de arquivos
+        'filebrowserUploadUrl': '/ckeditor/upload/', # Necessário para uploads
+    },
+}
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
