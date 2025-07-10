@@ -9,9 +9,9 @@
     </div>
     <ul class="nav-list">
         <li><a href="{% url "portfolio:home" %}">Home</a></li>
-        <li><a href="/">Sobre Mim</a></li>
-        <li><a href="/">Projetos</a></li>
-        <li><a href="/">Artigos</a></li>
+        <li><a href="{% url "portfolio:about" %}">Sobre Mim</a></li>
+        <li><a href="{% url "portfolio:home" %}#project">Projetos</a></li>
+        <li><a href="{% url "portfolio:articles" %}">Artigos</a></li>
         <li><a href="https://github.com/napolisiqueira" target="_blank">Github</a></li>
     </ul>
     </nav>

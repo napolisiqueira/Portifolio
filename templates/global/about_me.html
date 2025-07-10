@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sobre Mim{% endblock title %}
+
+
+{% block content %}
+  
+    <section class="sections">
+        <div class="about-content">
+            <h2>Sobre Mim</h2>
+            <p>
+Sou Felipe Napoli, estudante de Engenharia de Software e também estudante em Nutrição, com foco nas áreas Neurológica e Oncológica. Paralelamente à tecnologia, desenvolvo pesquisas acadêmicas, artigos epidemiológicos e revisões científicas dentro dessas áreas da saúde — sempre buscando integrar conhecimento técnico com aplicação real e impacto social.
+Como desenvolvedor autodidata, tenho experiência sólida com Python, utilizando frameworks como Django, Flask e FastAPI para construir APIs, aplicações web e sistemas completos. Entre meus principais projetos estão o GistlyAPI, um transcritor de voz e vídeo em tempo real que gera relatórios automáticos de reuniões; o MEYU, uma agenda de contatos simples e funcional desenvolvida com Django; e a API SMU, um sistema robusto de gerenciamento de usuários com autenticação segura e arquitetura bem estruturada.
+Trabalho com bancos de dados como PostgreSQL, MySQL e MongoDB, e utilizo ferramentas como Git, Docker e Linux no meu fluxo de desenvolvimento. Busco sempre aplicar boas práticas de código, arquitetura limpa e documentação, com foco em desempenho, escalabilidade e clareza.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="{% static 'images/myself.png' %}" alt="Imagem de perfil">
+        </div>
+    </section>
+
+  
+{% endblock content %}

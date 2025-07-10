@@ -61,7 +61,7 @@
   </section>
 
 
-  <section class="sections">
+  <section class="sections" id="project">
       <h2>Projetos Recentes</h2>
       <div class="projects">
         {% for project in projects %}
@@ -111,7 +111,7 @@
       {% endfor %}
       </div>
       <div class="see-more-wrapper">
-        <a href="{% url 'portfolio:articles' %}" class="see-more-btn">Ver mais artigos</a>
+        <a href="{% url 'portfolio:articles' %}" class="see-more-btn">Ver mais</a>
       </div>
     </section>
 {% endblock %}
