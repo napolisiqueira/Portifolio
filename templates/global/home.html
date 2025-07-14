@@ -33,8 +33,10 @@
     <div class="about-content">
         <h2>Sobre Mim</h2>
         <p>
-          Sou um desenvolvedor apaixonado por criar soluções inovadoras e eficientes. Com experiência em diversas tecnologias,
-          estou sempre em busca de novos desafios e oportunidades para aprender e crescer.
+          Sou Felipe Napoli, estudante de Engenharia de Software e também em Nutrição, com foco nas áreas Neurológica e Oncológica. Paralelamente à tecnologia,
+          desenvolvo pesquisas acadêmicas, artigos epidemiológicos e revisões científicas dentro dessas áreas da saúde — sempre buscando integrar conhecimento
+          técnico com aplicação real e impacto social. Como desenvolvedor autodidata, tenho experiência sólida com Python, utilizando frameworks como Django,
+          Flask e FastAPI para construir APIs, aplicações web e sistemas completos.
         </p>
       </div>
       <div class="about-image">
@@ -50,6 +52,12 @@
       <p>5 concluídos</p>
     </div>
     <div class="metric">
+      <h3>Experiencia</h3>
+      <p>+2 anos</p>
+      <p>Analista de Dados</p>
+      <p>Desenvolvedor Backend</p>
+    </div>
+    <div class="metric">
       <h3>Contribuições</h3>
       <p>340 commits+</p>
       <p>1 open source contribution</p>
@@ -63,6 +71,7 @@
 
   <section class="sections" id="project">
       <h2>Projetos Recentes</h2>
+      {% if projects %}
       <div class="projects">
         {% for project in projects %}
           <a class="project-card" href="{% url "portfolio:projects_detail" project.pk %}">
@@ -86,11 +95,15 @@
             </div>
           </a>
         {% endfor %}
+      {% else %}
+        <h2>Ainda não há projetos.</h2>
+      {% endif %}
       </div>
     </section>
 
   <section class="articles-section sections">
       <h2>Artigos</h2>
+      {% if articles %}
       <div class="posts">
       {% for article in articles %}
           <a class="post-card" href="{% url "portfolio:articles_detail" article.pk %}">
@@ -112,7 +125,11 @@
       </div>
       <div class="see-more-wrapper">
         <a href="{% url 'portfolio:articles' %}" class="see-more-btn">Ver mais</a>
+      {% else %}
+        <h2>Ainda não há artigos.</h2>
+      {% endif %}
       </div>
+
     </section>
 {% endblock %}
 
