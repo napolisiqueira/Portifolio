@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dotenv  # Importa a biblioteca dotenv
+
+# Carrega as variáveis do arquivo .env
+dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +25,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-74b^_+aw2p%qvkz!&1u)%5_e*sbqe&k4#9)rak#8d%lm-(l(z_'
+# Puxa a SECRET_KEY de uma variável de ambiente
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Puxa o estado de DEBUG de uma variável de ambiente. `DEBUG` é True se a variável for 'True' ou 'true'.
+DEBUG = os.getenv('DEBUG', 'False').lower() in ('true', '1', 't')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['31.97.94.128', 'www.felipenapolisiqueira.com']
 
 
 # Application definition
@@ -58,7 +65,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates' / 'global',  # Directory for custom templates
+            BASE_DIR / 'templates' / 'global',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -121,29 +128,24 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'templates' / 'global' / 'static',  # Directory for custom static files
+    BASE_DIR / 'templates' / 'global' / 'static',
 ]
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Directory for collected static files
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Configurações de MEDIA
-# URL que servirá os arquivos de mídia (uploads de usuários)
 MEDIA_URL = 'media/'
-# Diretório no sistema de arquivos onde os arquivos de mídia serão armazenados
-MEDIA_ROOT = BASE_DIR / 'media' # Isso criará uma pasta 'media' na raiz do seu projeto
-                                 # (ao lado de 'manage.py' e 'staticfiles')
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Configurações do CKEditor
-CKEDITOR_UPLOAD_PATH = 'uploads/' # Subpasta dentro de MEDIA_ROOT para uploads do CKEditor
-
-# Opcional: Configurações de toolbar do CKEditor (exemplo)
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
         'height': 300,
         'width': '100%',
-        'extraPlugins': 'codesnippet', # Exemplo: para adicionar plugin de código
-        'filebrowserBrowseUrl': '/ckeditor/browse/', # Necessário para o gerenciador de arquivos
-        'filebrowserUploadUrl': '/ckeditor/upload/', # Necessário para uploads
+        'extraPlugins': 'codesnippet',
+        'filebrowserBrowseUrl': '/ckeditor/browse/',
+        'filebrowserUploadUrl': '/ckeditor/upload/',
     },
 }
 # Default primary key field type
