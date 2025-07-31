@@ -30,8 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Puxa o estado de DEBUG de uma variável de ambiente. `DEBUG` é True se a variável for 'True' ou 'true'.
-# DEBUG = os.getenv('DEBUG', 'False').lower() in ('true', '1', 't')
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False').lower() in ('true', '1', 't')
 
 ALLOWED_HOSTS = ['31.97.94.128', 'www.felipenapolisiqueira.com']
 
