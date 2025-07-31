@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-74b^_+aw2p%qvkz!&1u)%5_e*sbqe&k4#9)rak#8d%lm-(l(z_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -125,6 +125,12 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Directory for collected static files
 
+# Configurações de MEDIA
+# URL que servirá os arquivos de mídia (uploads de usuários)
+MEDIA_URL = 'media/'
+# Diretório no sistema de arquivos onde os arquivos de mídia serão armazenados
+MEDIA_ROOT = BASE_DIR / 'media' # Isso criará uma pasta 'media' na raiz do seu projeto
+                                 # (ao lado de 'manage.py' e 'staticfiles')
 
 # Configurações do CKEditor
 CKEDITOR_UPLOAD_PATH = 'uploads/' # Subpasta dentro de MEDIA_ROOT para uploads do CKEditor

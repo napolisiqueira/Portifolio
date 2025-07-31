@@ -15,7 +15,7 @@ Trabalho com bancos de dados como PostgreSQL, MySQL e MongoDB, e utilizo ferrame
             </p>
         </div>
         <div class="about-image">
-            <img src="{% static 'images/myself.png' %}" alt="Imagem de perfil">
+            <img src="{% static 'images/myself6.png' %}" alt="Imagem de perfil">
         </div>
     </section>
 
@@ -40,6 +40,7 @@ Trabalho com bancos de dados como PostgreSQL, MySQL e MongoDB, e utilizo ferrame
         <div class="metric">
             <h3>Artigos</h3>
             <p>4 publicados (em nutrição)</p>
+            <p>3 publicados (em técnologia)</p>
         </div>
     </section>
 
@@ -69,13 +70,28 @@ Trabalho com bancos de dados como PostgreSQL, MySQL e MongoDB, e utilizo ferrame
         </div>
         </div>
     </section>
-        <div class="button-dl">
+    <section class="certificates-section">
+
+        <h2>Certificados</h2>
+        {% if certificados %}
+        {% for certificado in certificados %}
+        <div class="certificates-carousel">
+            <a class="certificate-card" href=" {{ certificado.link }} " target="_blank">
+                <img src=" {{ certificado.images.url }} " alt="{{ certificado }}">
+                <span>{{ certificado.name }}</span>
+            </a>
+        </div>
+        {% endfor %}
+        {% else %}
+            <p>Não há curriculo. Erro de comunicação com Banco de Dados.</p>
+        {% endif %}
+    </section>
+    <div class="button-dl">
         <a class="download-curriculo" href="{% url "portfolio:download_curriculo" %}" download="curriculo.pdf">
             <button>Baixar Curriculo</button>
         </a>
-        </div>
+    </div>
     <hr>
-
 
 
 {% endblock content %}

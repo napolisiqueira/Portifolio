@@ -1,6 +1,5 @@
 from django.urls import path
 from django.urls import include
-
 from . import views
 
 app_name = 'portfolio'
@@ -12,3 +11,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('', views.home, name='home'),
 ]
+
+
+handler404 = views.handler404.custom_page_not_found_view

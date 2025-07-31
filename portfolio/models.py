@@ -20,7 +20,7 @@ class Project(models.Model):
     name = models.CharField(max_length=100)
     sumary = models.TextField()
     description = models.TextField()
-    image = models.ImageField(upload_to="projects/", blank=True, null=True)
+    image = models.ImageField(upload_to="templates/globla/static/images", blank=True, null=True)
     document = models.FileField(upload_to="projects/documents/", blank=True, null=True)
     author = models.ForeignKey(
         "auth.User", on_delete=models.SET_NULL, blank=True, null=True
@@ -53,4 +53,13 @@ class Category(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
+        return self.name
+
+
+class Certificados(models.Model):
+    name = models.CharField(max_length=150)
+    link = models.CharField(max_length=200)
+    image = models.ImageField(upload_to="templates/globla/static/images")
+
+    def __repr__(self):
         return self.name

@@ -1,3 +1,71 @@
+/* ========== CERTIFICATES CAROUSEL ========== */
+.certificates-section {
+  margin: 3rem auto 2rem auto;
+  max-width: 70%;
+  padding: 1.5rem 1rem;
+  background: rgb(5, 0, 58);
+  border-radius: 5px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+.certificates-section h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.certificates-carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(5, 0, 58);
+}
+.certificate-card {
+  min-width: 220px;
+  max-width: 260px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem 1rem 1rem 1rem;
+  transition: transform 0.22s, box-shadow 0.22s;
+  cursor: pointer;
+}
+.certificate-card:hover {
+  transform: scale(1.045);
+}
+.certificate-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 0.7rem;
+  margin-bottom: 1rem;
+  background: #181a2a;
+}
+.certificate-card span {
+  font-size: 1.08rem;
+  color:#f1f1f1;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+@media (max-width: 700px) {
+  .certificates-carousel {
+    gap: 1rem;
+  }
+  .certificate-card {
+    min-width: 160px;
+    max-width: 180px;
+    padding: 1rem;
+  }
+  .certificate-card img {
+    height: 70px;
+  }
+}
 /* ========== ARTICLE DETAIL META FLEX ========== */
 .article-meta-row {
   width: 100%;
@@ -169,6 +237,7 @@ footer p {
     gap: 1rem;
 }
 
+
 /*/============================================= /*/
 
 
@@ -178,6 +247,7 @@ footer p {
     height: auto;
     max-width: 600px;
     margin-top: 1rem;
+    border-radius: 10px;
 }
 
 /* Marquee slider and hero section styles */
@@ -914,3 +984,24 @@ pre code {
   transition: ease-in-out 0.3s;
   opacity: 0.3;
 }
+
+.not-found-div {
+  background-color: rgb(5, 0, 58);
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+
+.logos-footer {
+  display: flex;
+  max-width: 70%;
+  justify-content: center;
+  margin: 2rem auto;
+  padding-bottom: 2rem;
+  padding-inline: 1rem;
+}
+
+.logos-footer img {
+  max-width: 55%;
+}
+

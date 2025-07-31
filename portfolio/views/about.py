@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import FileResponse
 from django.conf import settings
+from portfolio.models import Certificados
 import os
 
 def download_curriculo(request):
@@ -10,5 +11,11 @@ def download_curriculo(request):
         return FileResponse(open(file_path, 'rb'), content_type='application/pdf')
     else:
         return render(request, '404.html') 
+    
 def about(request):
-    return render(request, 'about_me.html')
+    certificados = Certificados.objects.all()
+
+    context = {
+        'certificados': certificados
+    }
+    return render(request, 'about_me.html', context)
