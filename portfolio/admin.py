@@ -32,6 +32,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @register(models.Certificados)
 class CertificadosAdmin(admin.ModelAdmin):
-    list_display = ('name', 'link', 'image',)
+    list_display = ('id', 'name', 'link', 'image',)
     search_fields = ('name',)
     ordering = ('name',)
