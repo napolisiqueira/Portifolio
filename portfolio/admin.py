@@ -30,3 +30,8 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     ordering = ('name',)
 
+@register(models.Certificados)
+class CertificadosAdmin(admin.ModelAdmin):
+    list_display = ('name', 'link', 'image',)
+    search_fields = ('name',)
+    ordering = ('name',)
