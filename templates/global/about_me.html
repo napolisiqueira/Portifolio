@@ -71,17 +71,19 @@ Trabalho com bancos de dados como PostgreSQL, MySQL e MongoDB, e utilizo ferrame
         </div>
     </section>
     <section class="certificates-section">
-
         <h2>Certificados</h2>
         {% if certificados %}
-        {% for certificado in certificados %}
-        <div class="certificates-carousel">
-            <a class="certificate-card" href=" {{ certificado.link }} " target="_blank">
-                <img src=" {{ certificado.images.url }} " alt="{{ certificado }}">
-                <span>{{ certificado.name }}</span>
-            </a>
+        <div class="certificates-carousel-wrapper">
+            <div class="certificates-carousel" id="certificates-carousel">
+                {% for certificado in certificados %}
+                <a class="certificate-card" href="{{ certificado.link }}" target="_blank">
+                    <img src="{{ certificado.images.url }}" alt="{{ certificado }}">
+                    <span>{{ certificado.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
         </div>
-        {% endfor %}
+        <script src="{% static 'js/metrics.js' %}"></script>
         {% else %}
             <p>Não há curriculo. Erro de comunicação com Banco de Dados.</p>
         {% endif %}
