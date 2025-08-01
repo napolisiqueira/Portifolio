@@ -77,7 +77,7 @@ Trabalho com bancos de dados como PostgreSQL, MySQL e MongoDB, e utilizo ferrame
             <div class="certificates-carousel" id="certificates-carousel">
                 {% for certificado in certificados %}
                 <a class="certificate-card" href="{{ certificado.link }}" target="_blank">
-                    <img src="{{ certificado.images.url }}" alt="{{ certificado }}">
+                    <img src="{{ certificado.image.url }}" alt="{{ certificado }}">
                     <span>{{ certificado.name }}</span>
                 </a>
                 {% endfor %}
