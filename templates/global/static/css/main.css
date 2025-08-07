@@ -1,3 +1,86 @@
+/* ========== MEDIA QUERIES PARA RESPONSIVIDADE ========== */
+@media (max-width: 999px) {
+    .custom-projects-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .custom-project-card {
+        width: 90vw;
+        max-width: 340px;
+        min-height: 220px;
+        padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+    }
+}
+/* ========== TECH CARDS (ABOUT ME) ========== */
+.tech-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  margin: 2.5rem auto 2rem auto;
+  max-width: 900px;
+}
+.tech-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  color: #fff;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  min-width: 240px;
+  max-width: 340px;
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.tech-card:hover {
+  transform: scale(1.035);
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18);
+}
+.tech-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #00ffc0;
+  text-align: center;
+}
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  align-items: flex-start;
+}
+.tech-list li {
+  font-size: 1.08rem;
+  background: rgba(255,255,255,0.13);
+  color: #fff;
+  border-radius: 0.7em;
+  padding: 0.35em 1em;
+  margin-bottom: 0.2em;
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: background 0.2s;
+}
+.tech-list li:hover {
+  background: #00ffc0;
+  color: #181a2a;
+}
+@media (max-width: 800px) {
+  .tech-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .tech-card {
+    min-width: 0;
+    max-width: 98vw;
+    width: 100%;
+  }
+}
 /* ========== CERTIFICATES CAROUSEL ========== */
 .certificates-section {
   margin: 3rem auto 2rem auto;
@@ -33,7 +116,6 @@
   width: 100%;
   max-width: 950px;
 }
-
 
 .certificates-carousel::-webkit-scrollbar-track {
   background: #181a2a;
@@ -268,6 +350,7 @@ footer p {
 
 
 /*/============ HERO SECTION CSS ============/*/
+
 .hero-image {
     width: 70%;
     height: auto;
@@ -278,10 +361,8 @@ footer p {
 
 /* Marquee slider and hero section styles */
 .hero {
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  max-width: 100%;
   background: rgb(5, 0, 58);
   min-height: 10rem;
   display: flex;
@@ -289,24 +370,25 @@ footer p {
   align-items: center;
   justify-content: center;
   padding: 2rem 0 0 0;
+  text-align: center;
 }
 
 .slider {
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   height: 3.75rem; /* 60px */
   overflow: hidden;
   background: rgb(5, 0, 58);
   display: flex;
   align-items: center;
   position: relative;
+  padding-top: 2rem;
 }
 
 .slider-marquee {
   display: flex;
   align-items: center;
   width: max-content;
-  min-width: 100vw;
   box-sizing: border-box;
   height: 100%;
   gap: 4.5rem;
@@ -537,6 +619,7 @@ footer p {
   transition: transform 0.22s cubic-bezier(.4,0,.2,1), box-shadow 0.22s cubic-bezier(.4,0,.2,1);
   cursor: pointer;
   min-height: 180px;
+  max-height: 358px;
 }
 .post-card:hover {
   transform: scale(1.025);
@@ -1031,3 +1114,4 @@ pre code {
   max-width: 55%;
 }
 
+/*----------------------------------*/

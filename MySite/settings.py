@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # Puxa o estado de DEBUG de uma variável de ambiente. `DEBUG` é True se a variável for 'True' ou 'true'.
 DEBUG = os.getenv('DEBUG', 'False').lower() in ('true', '1', 't')
 
-ALLOWED_HOSTS = ['31.97.94.128', 'felipenapolisiqueira.com.br', 'www.felipenapolisiqueira.com.br']
+ALLOWED_HOSTS = ['127.0.0.1', '31.97.94.128', 'felipenapolisiqueira.com.br', 'www.felipenapolisiqueira.com.br']
 
 
 # Application definition

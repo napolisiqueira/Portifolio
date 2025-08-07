@@ -10,7 +10,7 @@
         {% for article in articles %}
             <a class="article-card-stack" href="{% url "portfolio:articles_detail" article.pk %}">
             <div class="post-header">
-                <h3>{{ article.title }}</h3>
+                <h3>{{ article.title}}</h3>
                 <span class="post-date">{{ article.created_at|date:"d/m/Y" }}</span>
             </div>
             <p class="post-desc">{{ article.content|safe|striptags|truncatechars:150 }}</p>
