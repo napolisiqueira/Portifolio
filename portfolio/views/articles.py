@@ -11,4 +11,4 @@ def articles(request):
     articles = paginator.get_page(page_number)
 
 
-    return render(request, 'articles.html', {'articles': articles})
+    return render(request, 'articles_page.html', {'articles': articles})

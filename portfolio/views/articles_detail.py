@@ -7,4 +7,4 @@ def articles_detail(request, article_id):
     except Article.DoesNotExist:
         return render(request, 'portfolio/404.html', status=404)
 
-    return render(request, 'articles_detail.html', {'article': article})
+    return render(request, 'articles_detail_page.html', {'article': article})

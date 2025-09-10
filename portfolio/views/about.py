@@ -18,4 +18,4 @@ def about(request):
     context = {
         'certificados': certificados
     }
-    return render(request, 'about_me.html', context)
+    return render(request, 'about_me_page.html', context)

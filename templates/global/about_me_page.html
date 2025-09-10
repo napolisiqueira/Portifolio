@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sobre Mim{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/about_me_page.css' %}">
+
+{% endblock head %}
+
+{% block content %}
+  
+    <section class="sections">
+        <div class="about-content">
+            <h2>Sobre Mim</h2>
+            <p>
+Sou Felipe Napoli, estudante de Engenharia de Software e também  em Nutrição, com foco nas áreas Neurológica e Oncológica. Paralelamente à tecnologia, desenvolvo pesquisas acadêmicas, artigos epidemiológicos e revisões científicas dentro dessas áreas da saúde — sempre buscando integrar conhecimento técnico com aplicação real e impacto social.
+Como desenvolvedor autodidata, tenho experiência sólida com Python, utilizando frameworks como Django, Flask e FastAPI para construir APIs, aplicações web e sistemas completos. Entre meus principais projetos estão o GistlyAPI, um transcritor de voz e vídeo em tempo real que gera relatórios automáticos de reuniões; o MEYU, uma agenda de contatos simples e funcional desenvolvida com Django; e a API SMU, um sistema robusto de gerenciamento de usuários com autenticação segura e arquitetura bem estruturada.
+Trabalho com bancos de dados como PostgreSQL, MySQL e MongoDB, e utilizo ferramentas como Git, Docker e Linux no meu fluxo de desenvolvimento. Busco sempre aplicar boas práticas de código, arquitetura limpa e documentação, com foco em desempenho, escalabilidade e clareza.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="{% static 'images/myself6.png' %}" alt="Imagem de perfil">
+        </div>
+    </section>
+
+    <section class="sections">
+        <h2>Métricas</h2>
+        <div class="metric">
+            <h3>Projetos</h3>
+            <p>4 em desenvolvimento</p>
+            <p>5 concluídos</p>
+        </div>
+        <div class="metric">
+            <h3>Experiencia</h3>
+            <p>+2 anos</p>
+            <p>Analista de Dados</p>
+            <p>Desenvolvedor Backend</p>
+        </div>
+        <div class="metric">
+            <h3>Contribuições</h3>
+            <p>340 commits+</p>
+            <p>1 open source contribution</p>
+        </div>
+        <div class="metric">
+            <h3>Artigos</h3>
+            <p>4 publicados (em nutrição)</p>
+            <p>3 publicados (em técnologia)</p>
+        </div>
+    </section>
+
+    <section class="experience">
+        <h2>Experiencias</h2>
+        <div class="experience-block">
+        <div class="experience-content">
+            <div class="experience-title">
+                <h3>Exercito Brasileiro - Governo Federal - Centro de Preparação de Oficiais da Reserva CPOR/SP</h3>
+                <span class="post-date">03/2024 - 01/2025</span>
+            </div>
+            <p class="experience-text">Soldado do CPOR/SP, trbalhei na área de saúde e cuidados médicos básicos, primeiros socorros e APH (Atendimento Pré-Hospitalar) em operações e missões externas de longa duração.</p>
+        </div>
+        <div class="experience-content">
+            <div class="experience-title">
+                <h3>Mensa Distribuidora Ltda.</h3>
+                <span class="post-date">01/2025 - 06/2025</span>
+            </div>
+            <p class="experience-text">Analista de Dados - Desenvolvi soluções com python, Pandas, Matplotlib para criação de relatorios bem estruturados a partir de Big Data. Auxiliando diretamente nas decissões financeiras, vendas e campanhas publicitarias trbalahndo com dados relacionais e não relacionais. Além disso desenvolvi um programa de automação de relatorios periodicos e de consulta através da biblioteca Openpyxl, NumPy e SciPy, aliviando o desgaste de funcionarios com tarefas rotineiras. </p>
+        </div>
+        <div class="experience-content">
+            <div class="experience-title">
+                <h3>Trabalhos Pessoais</h3>
+                <span class="post-date">Presente</span>
+            </div>
+            <p class="experience-text">Atualmente me encontro desenvolvendo um software chamado GisplyAPI que através de Whisper, Mistral 7B trascreve arquivos de audio e video transformando os em ffmpeg e lendo o seu "Spectrum-Mel-Log" para trasncrição em tempo real, e consulta assincrona com geração de relatorio atraves de IA treinada com moldes proprios. Além disso me aventuro no fullstack com Django, Flask, HTML/CSS e JavaScript, com especialidade em Backend, principalmente criação de APIs robustas e solidas com arquitetura limpa e escalavel.</p>
+        </div>
+        </div>
+    </section>
+    <section class="certificates-section">
+        <h2>Certificados</h2>
+        {% if certificados %}
+        <div class="certificates-carousel-wrapper">
+            <div class="certificates-carousel" id="certificates-carousel">
+                {% for certificado in certificados %}
+                <a class="certificate-card" href="{{ certificado.link }}" target="_blank">
+                    <img src="{{ certificado.image.url }}" alt="{{ certificado }}">
+                    <span>{{ certificado.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <script src="{% static 'js/metrics.js' %}"></script>
+        {% else %}
+            <p>Não há curriculo. Erro de comunicação com Banco de Dados.</p>
+        {% endif %}
+    </section>
+    <div class="button-dl">
+        <a class="download-curriculo" href="{% url "portfolio:download_curriculo" %}" download="curriculo.pdf">
+            <button>Baixar Curriculo</button>
+        </a>
+    </div>
+    <hr>
+
+
+{% endblock content %}

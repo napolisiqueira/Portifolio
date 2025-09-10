@@ -1,0 +1,74 @@
+:root {
+  /* Colors */
+  --primary-color: 5, 0, 59;
+  --secondary-color: 12, 5, 74;
+  --tertiary-color: 15, 10, 66;
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: rgb(var(--white));
+  background-color: rgb(var(--secondary-color));
+  overflow-x: hidden
+}
+
+a {
+    color: rgb(var(--white));
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+/*/============================================= /*/
+
+.sections {
+    display: block;
+    justify-content: center;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: rgb(5, 0, 58);
+    color: #fff;
+    text-align: center;
+}
+@media (min-width: 999px) {
+  .sections {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    gap: 4rem;
+    padding: 2.5rem 6vw;
+    max-width: 60%;
+    margin: 3rem auto;
+    border-radius: 5px;
+  }
+}
+
+.not-found-div {
+  background-color: rgb(5, 0, 58);
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+

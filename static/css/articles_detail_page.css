@@ -1,0 +1,102 @@
+/* Styles for a single Article Detail Page */
+.article-detail {
+  max-width: 60%;
+  margin: var(--spacing-lg) auto;
+  padding: var(--spacing-lg) var(--spacing-sm);
+  background-color: rgb(var(--primary-color));
+  border-radius: var(--spacing-sm);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(var(--white));
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.article-description {
+  width: 90%;
+  color: rgb(var(--white));
+  font-size: 1.15rem;
+  line-height: 1.7;
+  background-color: transparent;
+  padding: var(--spacing-sm) 0 0 0;
+  word-break: break-word;
+}
+
+.article-description h1,
+.article-description h2,
+.article-description h3 {
+  color: rgb(var(--white));
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.article-description ul,
+.article-description ol {
+  margin-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.article-description a {
+  color: #00ffc0;
+  text-decoration: underline;
+}
+
+.article-meta-row {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.article-tags-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.article-author-date-right {
+  color: #b3b3b3;
+  font-size: 1.02rem;
+  font-style: italic;
+  text-align: right;
+}
+
+.tag {
+  font-size: 0.85rem;
+  padding: 0.25em 0.9em;
+  border-radius: 1em;
+  background-color: rgba(var(--white), 0.13);
+  color: rgb(var(--white));
+  border: 1px solid rgba(var(--white), 0.18);
+  margin-right: 0.2em;
+  margin-bottom: 0.2em;
+  transition: background-color 0.2s;
+}
+
+@media (max-width: 999px) {
+  .article-detail {
+    max-width: 90%;
+    padding: var(--spacing-sm) var(--spacing-xs);
+  }
+  .article-title {
+    font-size: var(--spacing-lg);
+    max-width: 90%;
+  }
+  .article-description {
+    width: 90%;
+  }
+  .article-meta-row {
+    max-width: 90%;
+  }
+}

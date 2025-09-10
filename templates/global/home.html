@@ -3,28 +3,66 @@
 
 {% block title %}Home - Meu Portfólio{% endblock %}
 
+{% block head %}
+  <link rel="stylesheet" href="{% static "css/partials/home/about_me.css" %}">
+  <link rel="stylesheet" href="{% static "css/partials/home/hero_section.css" %}">
+  <link rel="stylesheet" href="{% static "css/partials/home/projects_section.css" %}">
+  <link rel="stylesheet" href="{% static "css/partials/home/article_section.css" %}">
+  {% endblock head %}
+
+
 {% block content %}
   <section class="hero parallax-container">
-    <h1 class="word-of-day">EXPLORANDO CONCEITOS, CRIANDO SOLUÇÕES</h1>
-    <img class='hero-image' src="{% static 'images/code.png' %}" alt="The real code in universe is the one that works">
+      <h1 class="word-of-day">EXPLORANDO CONCEITOS, CRIANDO SOLUÇÕES</h1>
+      <img class='hero-image' src="{% static 'images/code.png' %}" alt="The real code in universe is the one that works">
 
     <div class="slider">
       <ul class="slider-marquee">
-        <li><i class="devicon-python-plain"></i></li>
-        <li><i class="devicon-django-plain"></i></li>
-        <li><i class="devicon-flask-original"></i></li>
-        <li><i class="devicon-fastapi-plain"></i></li>
-        <li><i class="devicon-go-plain"></i></li>
-        <li><i class="devicon-javascript-plain"></i></li>
-        <li><i class="devicon-html5-plain"></i></li>
-        <li><i class="devicon-css3-plain"></i></li>
-        <li><i class="devicon-mysql-plain"></i></li>
-        <li><i class="devicon-postgresql-plain"></i></li>
-        <li><i class="devicon-mongodb-plain"></i></li>
-        <li><i class="devicon-docker-plain"></i></li>
-        <li><i class="devicon-linux-plain"></i></li>
-        <li><i class="devicon-bash-plain"></i></li>
-        <li><i class="devicon-git-plain"></i></li>
+        <i class="devicon-python-plain"></i>
+        <i class="devicon-django-plain"></i>
+        <i class="devicon-flask-original"></i>
+        <i class="devicon-fastapi-plain"></i>
+        <i class="devicon-go-plain"></i>
+        <i class="devicon-javascript-plain"></i>
+        <i class="devicon-html5-plain"></i>
+        <i class="devicon-css3-plain"></i>
+        <i class="devicon-mysql-plain"></i>
+        <i class="devicon-postgresql-plain"></i>
+        <i class="devicon-mongodb-plain"></i>
+        <i class="devicon-docker-plain"></i>
+        <i class="devicon-linux-plain"></i>
+        <i class="devicon-bash-plain"></i>
+        <i class="devicon-git-plain"></i>
+        <i class="devicon-python-plain"></i>
+        <i class="devicon-django-plain"></i>
+        <i class="devicon-flask-original"></i>
+        <i class="devicon-fastapi-plain"></i>
+        <i class="devicon-go-plain"></i>
+        <i class="devicon-javascript-plain"></i>
+        <i class="devicon-html5-plain"></i>
+        <i class="devicon-css3-plain"></i>
+        <i class="devicon-mysql-plain"></i>
+        <i class="devicon-postgresql-plain"></i>
+        <i class="devicon-mongodb-plain"></i>
+        <i class="devicon-docker-plain"></i>
+        <i class="devicon-linux-plain"></i>
+        <i class="devicon-bash-plain"></i>
+        <i class="devicon-git-plain"></i>
+        <i class="devicon-python-plain"></i>
+        <i class="devicon-django-plain"></i>
+        <i class="devicon-flask-original"></i>
+        <i class="devicon-fastapi-plain"></i>
+        <i class="devicon-go-plain"></i>
+        <i class="devicon-javascript-plain"></i>
+        <i class="devicon-html5-plain"></i>
+        <i class="devicon-css3-plain"></i>
+        <i class="devicon-mysql-plain"></i>
+        <i class="devicon-postgresql-plain"></i>
+        <i class="devicon-mongodb-plain"></i>
+        <i class="devicon-docker-plain"></i>
+        <i class="devicon-linux-plain"></i>
+        <i class="devicon-bash-plain"></i>
+        <i class="devicon-git-plain"></i>
       </ul>
     </div>
   </section>
@@ -136,5 +174,4 @@
 
 
 {% block scripts %}
-  <script src="{% static 'js/slider_marquee.js' %}"></script>
 {% endblock %}

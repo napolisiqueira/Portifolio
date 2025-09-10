@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}{{ project.name }} - Detalhes do Projeto{% endblock title %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static "css/project_page.css" %}">
+{% endblock head %}
+
+{% block content %}
+  <section class="project-detail">
+    <h1>{{ project.name }}</h1>
+    {% if project.image %}
+      <div class="project-image">
+        <img src="{{ project.image.url }}" alt="{{ project.name }} preview">
+      </div>
+    {% endif %}
+    <div class="project-description">
+      <p>{{ project.description|safe }}</p>
+    </div>
+  </section>
+
+{% endblock content %}

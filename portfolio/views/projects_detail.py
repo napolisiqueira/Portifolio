@@ -7,4 +7,4 @@ def projects_details(request, project_id):
     except Project.DoesNotExist:
         return render(request, 'portfolio/404.html', status=404)
 
-    return render(request, 'project_detail.html', {'project': project})
+    return render(request, 'project_detail_page.html', {'project': project})

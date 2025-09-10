@@ -1,4 +1,7 @@
 {% load static %}
+
+{% block head %}<link rel="stylesheet" href="{% static 'css/partials/footer.css' %}">{% endblock head %}
+
 <footer class="footer">
     <div class="logos-footer">
         <a href="#">
@@ -20,7 +23,7 @@
         <img src="{% static 'images/suzano_logo.png' %}" alt="Suzano"> 
         </a>
         <a href="#">
-        <img src="{% static 'images/microsoft_logo.png' %}" alt="Microsoft"> 
+        <img src="{% static 'images/logo_microsoft.png' %}" alt="Microsoft"> 
         </a>
     </div>
     <p>Desenvolvido com <span style="color: red;">❤</span> por Felipe Napoli Siqueira.</p>

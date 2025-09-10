@@ -5,20 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="{% static 'images/3097011.png' %}" type="image/png">
-    <title>
-      {% block title %}
-
-      {% endblock %}
-    </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <title>{% block title %}Felipe Napoli Siqueira{% endblock %}</title>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="shortcut icon" href="{% static "images/favicon.png" %}" type="image/x-icon">
+    
+    <!-- LINKS FONTS AND MORE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet" />
 
-    {% block head_extra %}
-
-    {% endblock %}
+    {% block head %}{% endblock %}
+  
   </head>
+
+
+
   <body>
     <header>
       {% include 'partials/navbar.html' %}
@@ -35,6 +38,7 @@
     </footer>
 
     <script src="{% static 'js/navbar.js' %}"></script>
+
     {% block scripts %}
 
     {% endblock %}

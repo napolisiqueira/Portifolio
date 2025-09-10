@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ article.title }}{% endblock title %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/articles_detail_page.css' %}">
+{% endblock head %}
+
+
+{% block content %}
+  <section class="article-detail">
+    <h1 class="article-title">{{ article.title }}</h1>
+    <div class="article-description">
+      {{ article.content|safe }}
+    </div>
+    <div class="article-meta-row">
+      <div class="article-tags-left">
+        {% for tag in article.categories.all %}
+          <span class="tag">{{ tag.name }}</span>
+        {% endfor %}
+      </div>
+      <div class="article-author-date-right">
+        <span>Por {{ article.author }} em {{ article.created_at|date:"F j, Y" }}</span>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

@@ -1,4 +1,7 @@
 {% load static %}
+
+{% block header %}<link rel="stylesheet" href="{% static 'css/partials/header.css' %}">{% endblock header %}
+
 <header>
     <nav>
     <a class="logo" href="{% url "portfolio:home" %}">FELIPE SIQUEIRA</a>
