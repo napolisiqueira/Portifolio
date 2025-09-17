@@ -71,6 +71,5 @@ A pasta wiki/ contém:
 ## 📌 Status do Projeto
 
 - ✅ Em desenvolvimento ativo
-- 📦 Pronto para deploy com ajustes mínimos.
 - 🧩 Fácil de expandir (admin, blog, área restrita, etc.).
 - 👨‍💻 Autor: Felipe Napoli Siqueira
