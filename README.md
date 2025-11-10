@@ -1,12 +1,14 @@
 # Portfólio Pessoal - Desenvolvido em Django
 
-Este é um projeto de portfólio pessoal desenvolvido com **Django**, com o objetivo de apresentar seus principais projetos, habilidades e experiências de forma organizada, moderna e responsiva. Ideal para servir como um cartão de visitas online profissional.
+Este é um projeto de portfólio pessoal desenvolvido com **Django**, com o objetivo de apresentar meus principais projetos, habilidades e experiências de forma organizada, moderna e responsiva.
 
 ## ✨ Funcionalidades
 
 - Página inicial com apresentação pessoal
 - Sessão de projetos com descrições e links
 - Destaque para habilidades técnicas
+- Página de Artigos desenovolvidos por mim
+- Página de Sobre com certificados, trajetoria profissional e curriculo 
 - Design limpo, responsivo e fácil de manter
 
 ## 🛠️ Tecnologias Utilizadas
@@ -29,7 +31,7 @@ Portifolio/
 │ ├── views.py
 │ ├── templates/
 │ └── static/
-├── templates/ # HTMLs principais
+├── templates/ # Templates HTMLs principais
 ├── static/ # CSS, JS, imagens
 └── wiki/ # Documentação (SAD, SRS, Diagramas)
 ```
@@ -71,6 +73,4 @@ A pasta wiki/ contém:
 ## 📌 Status do Projeto
 
 - ✅ Em desenvolvimento ativo
-- 📦 Pronto para deploy com ajustes mínimos.
-- 🧩 Fácil de expandir (admin, blog, área restrita, etc.).
 - 👨‍💻 Autor: Felipe Napoli Siqueira
