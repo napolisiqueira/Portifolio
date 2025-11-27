@@ -103,8 +103,7 @@
 
   .post-card {
     flex: 1 1 0;
-    min-width: 0;
-    max-width: 90%;
+    width: 90%;
     padding: 2.5rem auto 1.5rem auto;
   }
 }
