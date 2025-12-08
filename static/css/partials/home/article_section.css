@@ -33,7 +33,7 @@
   transition: transform 0.22s cubic-bezier(.4, 0, .2, 1), box-shadow 0.22s cubic-bezier(.4, 0, .2, 1);
   cursor: pointer;
   min-height: 180px;
-  width: 90%;
+  max-width: 90%;
 }
 
 .post-card:hover {
@@ -46,13 +46,17 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
 }
 
 .post-header h3 {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0 0 0.2em 0;
+  flex: 1 1 auto;
+  min-width: 0; /* allow flex child to shrink on small screens */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .post-date {
@@ -60,6 +64,8 @@
   color: #b3b3b3;
   margin-top: 0.2em;
   white-space: nowrap;
+  flex: 0 0 auto; /* keep date size and avoid it being squeezed */
+  margin-left: 0.8rem;
 }
 
 .post-desc {
@@ -130,6 +136,7 @@
   transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 12px 0 rgba(var(--black), 0.08);
   cursor: pointer;
+  margin: 1 0 2 0;
 }
 
 .see-more-btn:hover {
